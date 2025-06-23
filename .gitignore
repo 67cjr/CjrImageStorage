@@ -1,4 +1,6 @@
 application.yml
+# Custom configuration files
+application-local.yml
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
