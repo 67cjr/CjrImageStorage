@@ -94,6 +94,17 @@ public interface UserService extends IService<User> {
      */
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
+    /**
+     * 是否为管理员
+     *
+     * @param user
+     * @return
+     */
+    boolean isAdmin(User user);
 
+    /**
+     * 用户兑换会员（会员码兑换）
+     */
+    boolean exchangeVip(User user, String vipCode);
 
 }
