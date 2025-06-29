@@ -1,7 +1,9 @@
 package com.cjr.cjrimagestorage.service;
 
+import com.cjr.cjrimagestorage.model.dto.space.SpaceAddRequest;
 import com.cjr.cjrimagestorage.model.entity.Space;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cjr.cjrimagestorage.model.entity.User;
 
 /**
 * @author chengjinrui
@@ -10,4 +12,27 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface SpaceService extends IService<Space> {
 
+    /**
+     * 创建空间
+     *
+     * @param spaceAddRequest
+     * @param loginUser
+     * @return
+     */
+    long addSpace(SpaceAddRequest spaceAddRequest, User loginUser);
+
+    /**
+     * 校验空间
+     *
+     * @param space
+     * @param add   是否为创建时检验
+     */
+    void validSpace(Space space, boolean add);
+
+    /**
+     * 根据空间级别填充空间对象
+     *
+     * @param space
+     */
+    void fillSpaceBySpaceLevel(Space space);
 }
